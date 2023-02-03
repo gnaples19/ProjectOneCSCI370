@@ -8,7 +8,7 @@ public class scoreManager : MonoBehaviour
 {
     //public TextMeshProUGUI scoreText;
     public Text scoreText;
-    int score = 0;
+    public int score = 0;
 
     // Start is called before the first frame update
     void Start()
@@ -21,6 +21,11 @@ public class scoreManager : MonoBehaviour
     {
         score = ((int)Time.time);
         scoreText.text = "Score: " + ((int)score).ToString(); 
+    }
+
+    public void resetScore()
+    {
+        score = 0;
     }
 
 }

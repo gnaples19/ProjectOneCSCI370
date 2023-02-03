@@ -10,6 +10,7 @@ public class GameManager : MonoBehaviour
     public static GameManager Instance {get; private set;}
 
     private int score;
+    private int gameTime;
 
     public TextMeshProUGUI scoreText;
     public GameObject banner;
@@ -42,6 +43,14 @@ public class GameManager : MonoBehaviour
         button.SetActive(true);
     }
 
+    public void resetScore(){
+        int temp = 0;
+        temp = (int)Time.time;
+        gameTime=temp;
+        score = (int)Time.time - gameTime;;
+        scoreText.text = "Score: " + ((int)score).ToString(); 
+    }
+
     // Start is called before the first frame update
     void Start()
     {
@@ -51,6 +60,8 @@ public class GameManager : MonoBehaviour
     // Update is called once per frame
     void Update()
     {
-        
+        score = (int)Time.time - gameTime;
+        //score = ((int)Time.time);
+        scoreText.text = "Score: " + ((int)score).ToString(); 
     }
 }

@@ -25,6 +25,7 @@ public class Collision : MonoBehaviour
 
     void OnTriggerEnter2D(Collider2D col) {
         if (col.gameObject.tag == "Asteroid") {
+            GameManager.Instance.resetScore();
             Invoke("Restart", 0.1f);
         }
     }
