@@ -22,4 +22,5 @@ public class scoreManager : MonoBehaviour
         score = ((int)Time.time);
         scoreText.text = "Score: " + ((int)score).ToString(); 
     }
+
 }
